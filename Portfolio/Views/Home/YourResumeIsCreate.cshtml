@@ -1,0 +1,400 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />    
+    <title></title>
+    
+    <!-- Подключение библеотек -->
+    <link rel="icon" href="~/images/logo_dark.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/Content/Site.css" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Для карусели -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src=" https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+   
+</head>
+<body>
+@{
+    try
+    {
+        WebMail.SmtpServer = "smtp.example.com";
+        WebMail.SmtpPort = 2087;
+        WebMail.EnableSsl = true;
+        WebMail.UserName = "mySmtpUsername";
+        WebMail.Password = "mySmtpPassword";
+        WebMail.From = "rsvps@example.com";
+        WebMail.Send("terratsukiyomi@gmail.com", "RSVP Notification",
+        Model.Name + " is " + ((Model.WillAttend ?? false) ? "" : "not")
+        + "attending");
+    }
+    catch (Exception)
+    {
+            @:<b>Sorry - we couldn't send the email to confirm your RSVP.</b>
+    }
+}
+    <div class="top">
+         <div class="row" id="first_top_line">
+         <div class="container">
+         <a href="#"><h1 class="leftstr">RESUME</h1></a>
+         <p class="rightstr">@Html.ActionLink("Login", "Login")</p>
+         </div>   
+        </div>
+        <div class="row" id="second_top_line">
+                <div class="container">                
+                <ul class="hr">                
+                    <li class="item">@Html.ActionLink("All Projects", "Allprojects")</li>
+                    <li class="item">@Html.ActionLink("My Projects", "Myprojects")</li>
+                    <li class="item">@Html.ActionLink("Create RESUME", "CreateresumeForm")</li>
+                    <li class="item">@Html.ActionLink("Create yourself PORTFOLIO", "CreateyourselfportfolioForm")</li>
+                    <li class="item">@Html.ActionLink("Opportunities", "Opportunities")</li>
+                </ul>
+                </div>        
+        </div>
+                    
+            <div class="container">
+        <div class="row"  id="third_top_line">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+              </ol>
+
+              <!-- Wrapper for slides -->
+              <div class="carousel-inner">
+                <div class="item active">
+                  <img src="/images/main_1.jpg" alt="Los Angeles">
+                </div>
+
+                <div class="item">
+                  <img src="/images/main_4.jpg" alt="Chicago">
+                </div>
+
+                <div class="item">
+                  <img src="/images/main_3.jpg" alt="New York">
+                </div>
+              </div>
+
+              <!-- Left and right controls -->
+              <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+            
+            
+            <!--
+            <pre>
+       #follow your heart.                 #fighting for life.                    #enjoy every moment.                        #everyone has one's own path.
+              
+                    #life is beautiful.                    <b><i>#you can do anything! But first - write it down...</i></b>                #came, saw, conquer.
+                            
+         #now or never.          #remember who you are.                #let it be.        #tо be or not to be.
+
+                 #Get Up                                                 #never look back.                             #live without regrets.</pre>
+          -->
+            </div>   
+        </div>
+        
+    </div>
+    <div class="wrapper">
+    <div class="content">
+    <div class="row" id="four_line">
+     <div class="container">
+      <div class="col-md-12">
+      <h2>Резюмэ</h2><hr></div>
+     </div>
+    </div>
+    <!-- Второй ряд сетки --> 
+    <div class="row" id="six_line">
+      <div class="col-md-1"></div>
+      <div class="col-md-1"><p class="indevidual_otstup_dlya_nomera_portfolio">Resume #1</p></div>
+      <div class="col-md-8">
+      <div align="center">
+      <h3>@Model.Фамилия @Model.Имя @Model.Отчество</h3>
+      <p>@Model.ОписаниеПортфолиоЗаметка</p></div>
+      <table class="table table-hover">
+        <tbody>
+          <tr>
+            <td><b>Основное</b></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Желаемая должность</td>
+            <td>@Model.Желаемая_должность</td>
+          </tr>
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Желаемая зарплата</td>
+            <td>@Model.Желаемая_зарплата</td>
+          </tr>
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Тип работы</td>
+            <td>@Model.Тип_работы</td>
+          </tr>
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Место работы</td>
+            <td>@Model.Место_работы</td>
+          </tr>
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Дополнительная информация основная</td>
+            <td>@Model.Дополнительная_информация_основная</td>
+          </tr>   
+          <tr>
+            <td><br /> </td>
+            <td> </td>
+          </tr> 
+          <tr>
+            <td><b>Личные данные</b></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Имя</td>
+            <td>@Model.Имя</td>
+          </tr>
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Фамилия</td>
+            <td>@Model.Фамилия</td>
+          </tr>
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Отчество</td>
+            <td>@Model.Отчество</td>
+          </tr>
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Пол</td>
+            <td>@Model.Пол</td>
+          </tr>
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Дата_рождения</td>
+            <td>@Model.Дата_рождения</td>
+          </tr>
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Образование</td>
+            <td>@Model.Образование</td>
+          </tr>
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Город_проживания</td>
+            <td>@Model.Город_проживания</td>
+          </tr>  
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Дополнительная информация личная</td>
+            <td>@Model.Дополнительная_информация_личная</td>
+          </tr>   
+          <tr>
+            <td><br /></td>
+            <td> </td>
+          </tr> 
+          <tr>
+            <td><b>Опыт работы</b></td>
+            <td></td>
+          </tr>  
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Период</td>
+            <td>С @Model.Период_работы_c &nbsp по &nbsp @Model.Период_работы_по</td>
+          </tr>  
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Должность</td>
+            <td>@Model.Должность</td>
+          </tr>   
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Организация</td>
+            <td>@Model.Организация</td>
+          </tr>  
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Должностные_обязаности</td>
+            <td>@Model.Должностные_обязаности</td>
+          </tr>  
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Отличился</td>
+            <td>@Model.Отличился</td>
+          </tr>  
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Дополнительная_информация_опыт</td>
+            <td>@Model.Дополнительная_информация_опыт</td>
+          </tr>   
+          <tr>
+            <td><br /></td>
+            <td> </td>
+          </tr> 
+          <tr>
+            <td><b>Образование</b></td>
+            <td></td>
+          </tr>   
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Учебное_заведение</td>
+            <td>@Model.Учебное_заведение</td>
+          </tr>  
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Дата_окончания_образование</td>
+            <td>@Model.Дата_окончания_образования</td>
+          </tr>  
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Уровень_образования</td>
+            <td>@Model.Уровень_образования</td>
+          </tr>  
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Факультет</td>
+            <td>@Model.Факультет</td>
+          </tr>  
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Специальность </td>
+            <td>@Model.Специальность </td>
+          </tr>  
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Форма_обучения</td>
+            <td>@Model.Форма_обучения</td>
+          </tr>  
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Проявил_себя_в</td>
+            <td>@Model.Проявил_себя_в</td>
+          </tr>  
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Дополнительная_информация_образование</td>
+            <td>@Model.Дополнительная_информация_образование</td>
+          </tr>    
+          <tr>
+            <td><br /></td>
+            <td> </td>
+          </tr>  
+          <tr>
+            <td><b>Курсы и тренинги</b></td>
+            <td></td>
+          </tr> 
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Название</td>
+            <td>@Model.Название</td>
+          </tr>  
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Место_проведения</td>
+            <td>@Model.Место_проведения</td>
+          </tr>  
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Дата_окончания</td>
+            <td>@Model.Дата_окончания</td>
+          </tr>  
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Особенно_хорош_в </td>
+            <td>@Model.Особенно_хорош_в </td>
+          </tr>  
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Дополнительная_информация_курсы</td>
+            <td>@Model.Дополнительная_информация_курсы</td>
+          </tr>   
+          <tr>
+            <td><br /></td>
+            <td> </td>
+          </tr>   
+          <tr>
+            <td><b>Навыки, знания и умения</b></td>
+            <td></td>
+          </tr>  
+          <tr>
+            <td>&nbsp&nbsp&nbsp<b>Языки</b></td>
+            <td></td>
+          </tr> 
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Язык</td>
+            <td>@Model.Язык</td>
+          </tr>  
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Уровень</td>
+            <td>@Model.Уровень</td>
+          </tr>  
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Больше_даётся</td>
+            <td>@Model.Больше_даётся</td>
+          </tr>  
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Дополнительная_информация_языки</td>
+            <td>@Model.Дополнительная_информация_языки</td>
+          </tr>  
+          <tr>
+            <td>&nbsp&nbsp&nbsp<b>Знания</b></td>
+            <td></td>
+          </tr>  
+          <tr>
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Знания</td>
+            <td>@Model.Навык</td>
+          </tr>   
+          <tr>
+            <td>&nbsp&nbsp&nbsp<b>Навык</b></td>
+            <td></td>
+          </tr> 
+          <tr> 
+            <td>&nbsp&nbsp&nbsp&nbsp&nbsp Навык</td>
+            <td>@Model.Навык</td>
+          </tr>    
+          <tr>
+            <td><br /></td>
+            <td> </td>
+          </tr> 
+          <tr>
+            <td><b>Дополнительная информация</b></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>&nbsp&nbsp&nbsp Плохие_личные_качества</td>
+            <td>@Model.Плохие_личные_качества</td>
+          </tr>  
+          <tr>
+            <td>&nbsp&nbsp&nbsp Хорошие_личные_качества<</td>
+            <td>@Model.Хорошие_личные_качества</td>
+          </tr>  
+          <tr>
+            <td>&nbsp&nbsp&nbsp Дополнительная_информация_качествах</td>
+            <td>@Model.Дополнительная_информация_качествах<br />        
+            </td>
+          </tr>  
+          <tr>
+            <td><br /></td>
+            <td> </td>
+          </tr>
+          <tr>
+            <td><b>Общие_дополнительные_сведенья</b></td>
+            <td>@Model.Общие_дополнительные_сведенья</td>
+          </tr>
+         </tbody>
+      </table>
+      <hr />
+      <div align="right">Resume #@Model.Номер_резюмэ<br /> @Model.Дата_создания <br />@Model.Ссылка_на_резюмэ <br /> <br /> <br /> <br /> <br /> <br /> </div>
+        
+  <div class="align_right"><button class="searchbtn" disabled>Просмотреть все свои портфолио</button></div>
+  
+
+
+
+      </div>
+      <div class="col-md-1"></div>
+      <div class="col-md-1"></div>
+    </div>
+
+
+
+  </div>
+    <div class="footer">
+     <div class="container">
+                <ul class="hr">
+                    <li class="item"><a href="#">Help</a></li>
+                    <li class="item"><a href="#">Map of site</a></li>
+                    <li class="item"><a href="#">Rules</a></li>
+                    <li class="item"><a href="#">About us</a></li>
+                    <li class="item"><a href="#">Contact</a></li>
+                </ul>
+
+     </div>
+    </div>
+    </div>
+</body>
+</html>

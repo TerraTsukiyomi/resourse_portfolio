@@ -1,0 +1,82 @@
+﻿@model Portfolio.Models.Portfolio
+
+@{
+    ViewBag.Title = "Creating PORTFOLIO";
+    Layout = "~/Views/_BasicLayout.cshtml";
+}
+
+
+           
+        <p class="leftstr1"><b>Создание портфолио типа:</b></p>
+          
+                     @using (Html.BeginForm())
+                  {
+                  <p class="rightstr1"> @Html.DropDownListFor(x => x.Тип, new[] {
+                           new SelectListItem() {Text="Стандартное", Value = "Стандартное"} , 
+                           new SelectListItem() {Text="Изображение", Value = "Изображение"} ,    
+                           new SelectListItem() {Text="Video", Value = "Video"}  ,
+                           new SelectListItem() {Text="Music", Value = "Music"}  ,   
+                           new SelectListItem() {Text="Профессиональный портрет", Value = "ПрофПортрет"}  ,
+                           new SelectListItem() {Text="Призентация", Value = "Призентация"} , 
+                           new SelectListItem() {Text="Таблица", Value = "Таблица"} , 
+                           new SelectListItem() {Text="Диаграмма", Value = "Диаграмма"}  ,
+                           new SelectListItem() {Text="Ссылка", Value = "Ссылка"},
+                           new SelectListItem() {Text="Комбинированное", Value = "Комбинированное"}                                                
+                  }, "NoType") </p>
+                  }
+  
+       @Html.ValidationSummary() 
+
+       @using (Html.BeginForm())
+       {
+        <table class="table table-bordered" id="prozrach">
+        <tbody>
+          <tr>
+            <td id="prozrach" width="140px"><p>&nbsp Название</p></td>
+            <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.НазваниеПортфолио) </td>
+            <td id="prozrach"><i>(Два/три слова. Назвние вашего портфолио или общее название всех работ, которые в нём имеются)</i></td>
+          </tr>
+          <tr>
+            <td id="prozrach" width="140px"><p>&nbsp Автор</p></td>
+            <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Автор)</td>
+            <td id="prozrach"><i>(Устанавливается автоматически. Можно изменить, только, если это настоящее имя, либо очередной псевдоним)</i></td>
+          </tr>
+          <tr>
+            <td id="prozrach" width="140px"><p>&nbsp Цель</p></td>
+            <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Цель)</td>
+            <td id="prozrach"><i>(Одно слово. Каждое порфтолио посященно одной цели. <u>Например: </u> работодателю, коллекция, диагностика, анализ, мотивация, рейтинг, опыт, атестация, самообразование)</i></td>
+          </tr>
+          <tr>
+            <td id="prozrach" width="140px"><p>&nbsp Характеристика</p></td>
+            <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Характеристика)</td>
+            <td id="prozrach"><i>(Короткое или длинное описание портфолио. <u> Например:</u>  (Длинная) В этом портфолио, собраны все собранные мной работы, которые...)</i></td>
+          </tr>
+          <tr>
+            <td id="prozrach" width="140px"><p>&nbsp Описание </p></td>
+            <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Описание)</td>
+            <td id="prozrach"><i>(Писать каждое слово в единственном числе, через запятую. Это теги. <u> Например:</u>  природа, шашлык, отдых, кот (никаких "котята" ;( ), сад)</i></td>
+          </tr>
+          <tr>
+            <td id="prozrach" width="140px"><p>&nbsp Дата создания</p></td>
+            <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Дата_создания)</td>
+            <td id="prozrach"><i>(Устанавливается автоматически, но можно изменить)</i></td>
+          </tr>
+          <tr>
+            <td id="prozrach" width="140px"><p>&nbsp Работы</p></td>
+            <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Работа)</td>
+            <td id="prozrach"><i>(Работы которые имеются в портфолио)</i></td>
+          </tr>
+          <tr>
+            <td id="prozrach" width="140px"></td>
+            <td id="prozrach" width="210px" style="text-align: right"><input class="input_fin" type="submit" value="Создать портфолио" /> </td>
+            <td id="prozrach"></td>
+            
+          </tr>
+        </tbody>
+      </table>
+      }
+
+      
+      
+
+

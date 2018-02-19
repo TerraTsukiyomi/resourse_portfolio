@@ -1,0 +1,386 @@
+﻿@model Portfolio.Models.CurriculumVitae
+
+@{
+    
+    ViewBag.Title = "Creating RESUME";
+    Layout = "~/Views/_BasicLayout.cshtml";
+}
+
+
+      @Html.ValidationSummary()
+      @using (Html.BeginForm())
+      { 
+      <!----------------------------------------> 
+         <table class="table table-bordered" id="prozrach">
+            <tbody>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Описание</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.ОписаниеПортфолиоЗаметка)</td>
+                <td id="prozrach"><i>(Обязательно. Это поле только для уникальности резюмэ среди остальных. При печати или отображения не отображается.)</i></td>
+              </tr>
+            </tbody>
+          </table>
+      <!---------------------------------------->
+
+      <!------------------ Основное---------------------->        
+        <table class="table table-bordered" id="prozrach">
+            <thead>
+            <tr>
+                <th id="prozrach" width="300px">Основное</th>
+                <th id="prozrach" width="210px"></th>
+                <th id="prozrach"></th>
+             </tr>
+             </thead>
+            <tbody>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Желаемая должность</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Желаемая_должность)</td>
+                <td id="prozrach"><i>(Должность на которую Вы претендуете)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Желаемая зарплата</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Желаемая_зарплата)</td>
+                <td id="prozrach"><i>(Зарплата которую Вы желаете)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Тип работы</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Тип_работы)</td>
+                <td id="prozrach"><i>(То, чем  и как Вы хотите заниматься. <u>Например:</u>Отдалённая работа, в оффисе, исследования, програмирование)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Место_работы</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Место_работы)</td>
+                <td id="prozrach"><i>(То, где вы хотите работать. <u>Например:</u> Франция, Леон, Компания "Рено")</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Дополнительная основная информация </td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Дополнительная_информация_основная)</td>
+                <td id="prozrach"><i>(Дополнительная_информация_основная)</i></td>
+              </tr>
+            </tbody>
+          </table>
+      <!---------------------------------------->
+
+      <!------------------ Личная ---------------------->        
+      <table class="table table-bordered" id="prozrach">
+            <thead>
+              <tr>
+                <th id="prozrach" width="300px">Личные данные</th>
+                <th id="prozrach" width="210px"></th>
+                <th id="prozrach"></th>
+             </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Имя</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Имя)</td>
+                <td id="prozrach"><i>(Ваше имя)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Фамилия</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Фамилия)</td>
+                <td id="prozrach"><i>(Ваша фамилия)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Отчество</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Отчество)</td>
+                <td id="prozrach"><i>(Ваше отчество)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Пол</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Пол)</td>
+                <td id="prozrach"><i>(Ваш пол)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Дата рождения</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Дата_рождения)</td>
+                <td id="prozrach"><i>(Дата рождения)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Образование</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Образование)</td>
+                <td id="prozrach"><i>(<u>Например:</u> Диплом магистра програмирования)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Город проживания</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Город_проживания)</td>
+                <td id="prozrach"><i>(<u>Например:</u> Сингапур, Москва)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Дополнительная личная информация</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Дополнительная_информация_личная)</td>
+                <td id="prozrach"><i>(Любая дополнительная информация. <u>Например: жамежем/женат</u>)</i></td>
+              </tr>
+            </tbody>
+          </table>
+      <!---------------------------------------->
+
+      <!------------------ Опыт работы ---------------------->        
+        <table class="table table-bordered" id="prozrach">
+            <thead>
+              <tr>
+                <th id="prozrach" width="300px">Опыт работы</th>
+                <th id="prozrach" width="210px"></th>
+                <th id="prozrach"></th>
+             </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Работал(а) c</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Период_работы_c)</td>
+                <td id="prozrach"><i>(Период_работы_c)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Работал(а) по</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Период_работы_по)</td>
+                <td id="prozrach"><i>(Ваша фамилия)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Должность</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Должность)</td>
+                <td id="prozrach"><i>(Ваше отчество)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Организация</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Организация)</td>
+                <td id="prozrach"><i>(Ваш пол)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Должностные обязаности</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Должностные_обязаности)</td>
+                <td id="prozrach"><i>(Дата рождения)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Отличился</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Отличился)</td>
+                <td id="prozrach"><i>(<u>Например:</u> Диплом магистра програмирования)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Дополнительный опыт</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Дополнительная_информация_опыт)</td>
+                <td id="prozrach"><i>(Любая дополнительная информация. <u>Например: жамежем/женат</u>)</i></td>
+              </tr>
+            </tbody>
+          </table>
+      <!---------------------------------------->
+
+
+      <!------------------ Образование ---------------------->        
+         <table class="table table-bordered" id="prozrach">
+            <thead>
+              <tr>
+                <th id="prozrach" width="300px">Образование</th>
+                <th id="prozrach" width="210px"></th>
+                <th id="prozrach"></th>
+             </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Учебное заведение</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Учебное_заведение)</td>
+                <td id="prozrach"><i>(Учебное_заведение)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Дата окончания образования</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Дата_окончания_образования)</td>
+                <td id="prozrach"><i>(Дата_окончания_образования)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Уровень образования</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Уровень_образования)</td>
+                <td id="prozrach"><i>(Уровень_образования)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Факультет</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Факультет)</td>
+                <td id="prozrach"><i>(Факультет)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Специальность</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Специальность)</td>
+                <td id="prozrach"><i>(Специальность)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Форма обучения</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Форма_обучения)</td>
+                <td id="prozrach"><i>(<u>Например:</u> Дневная)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Проявил себя в</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Проявил_себя_в)</td>
+                <td id="prozrach"><i>(<u>Например:</u> Дневная)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Дополнительное информация о образовании</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Дополнительная_информация_образование)</td>
+                <td id="prozrach"><i>(Любая дополнительная информация. <u>Например: </u>)</i></td>
+              </tr>
+            </tbody>
+          </table>
+      <!---------------------------------------->
+
+      <!------------------ Курсы и тренинги ---------------------->         
+         <table class="table table-bordered" id="prozrach">
+            <thead>
+              <tr>
+                <th id="prozrach" width="300px">Курсы и тренинги</th>
+                <th id="prozrach" width="210px"></th>
+                <th id="prozrach"></th>
+             </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Название</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Название)</td>
+                <td id="prozrach"><i>(Название)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Место проведения</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Место_проведения)</td>
+                <td id="prozrach"><i>(Место_проведения)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Дата окончания</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Дата_окончания)</td>
+                <td id="prozrach"><i>(Дата_окончания)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Особенно хорош в</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Особенно_хорош_в)</td>
+                <td id="prozrach"><i>(Особенно_хорош_в)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Дополнительная информация о курсах</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Дополнительная_информация_курсы)</td>
+                <td id="prozrach"><i>(Дополнительная_информация_курсы)</i></td>
+              </tr>
+            </tbody>
+          </table>
+      <!---------------------------------------->
+
+      <!------------------ Навыки ---------------------->        
+        <table class="table table-bordered" id="prozrach">
+            <thead>
+              <tr>
+                <th id="prozrach" width="300px">Навыки, знания и умения</th>
+                <th id="prozrach" width="210px"></th>
+                <th id="prozrach"></th>
+             </tr>
+            </thead>
+            <tbody>
+              <tr>            
+                <th id="prozrach" width="300px">&nbsp&nbsp Языки</th>
+                <th id="prozrach" width="210px"></th>
+                <th id="prozrach"></th>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Язык</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Язык)</td>
+                <td id="prozrach"><i>(Название)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Уровень</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Уровень)</td>
+                <td id="prozrach"><i>(Уровень: бакалавр, магистр)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Больше всего даётся</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Больше_даётся)</td>
+                <td id="prozrach"><i>(Больше_даётся)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Дополнительная информация о курсе</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Дополнительная_информация_курсы)</td>
+                <td id="prozrach"><i>(Дополнительная_информация_курсы)</i></td>
+              </tr>
+              
+              <tr>            
+                <th id="prozrach" width="300px">&nbsp&nbsp Знания</th>
+                <th id="prozrach" width="210px"></th>
+                <th id="prozrach"></th>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Знания</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Навык)</td>
+                <td id="prozrach"><i>Знания</i></td>
+              </tr>
+              <tr>            
+                <th id="prozrach" width="300px">&nbsp&nbsp Навыки</th>
+                <th id="prozrach" width="210px"></th>
+                <th id="prozrach"></th>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp Навык</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Навык)</td>
+                <td id="prozrach"><i>Навык</i></td>
+              </tr>
+            </tbody>
+          </table>
+      <!---------------------------------------->
+
+      <!------------------ Доп. инфо ---------------------->        
+         <table class="table table-bordered" id="prozrach">
+            <thead>
+              <tr>
+                <th id="prozrach" width="300px">Дополнительная информация</th>
+                <th id="prozrach"></th>
+                <th id="prozrach"></th>
+             </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Плохие личные качества</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Плохие_личные_качества)</td>
+                <td id="prozrach"><i>(Плохие_личные_качества)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Хорошие личные качества</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Хорошие_личные_качества)</td>
+                <td id="prozrach"><i>(Хорошие_личные_качества)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Дополнительная информация</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Дополнительная_информация_качествах)</td>
+                <td id="prozrach"><i>(Дополнительная_информация_качествах)</i></td>
+              </tr>
+              
+              <tr>
+                <th id="prozrach" width="300px"><br />&nbsp Общие дополнительные сведенья</th>
+                <th id="prozrach" width="210px"><br />@Html.TextBoxFor(x => x.Общие_дополнительные_сведенья)</th>
+                <th id="prozrach"><br /></th>
+             </tr>
+
+            </tbody>
+          </table>
+      <!---------------------------------------->
+     <hr /><br />
+      <!------------------ Черта ---------------------->        
+        <table class="table table-bordered" id="prozrach">
+            <thead>
+            </thead>
+            <tbody>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Номер резюмэ</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Номер_резюмэ)</td>
+                <td id="prozrach"><i>(Номер_резюмэ)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Дата создания</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Дата_создания)</td>
+                <td id="prozrach"><i>(Дата_создания)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px">&nbsp&nbsp&nbsp&nbsp&nbsp Ссылка на резюмэ</td>
+                <td id="prozrach" width="210px">@Html.TextBoxFor(x => x.Ссылка_на_резюмэ)</td>
+                <td id="prozrach"><i>(Ссылка_на_резюмэ)</i></td>
+              </tr>
+              <tr>
+                <td id="prozrach" width="300px"></td>
+                <td id="prozrach" width="210px" align="right"><input class="input_fin" type="submit" value="Создать портфолио" /></td>
+                <td id="prozrach"></td>
+              </tr>
+            </tbody>
+          </table>        
+      }        
+        
+      
